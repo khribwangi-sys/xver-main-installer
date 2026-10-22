@@ -21,5 +21,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: xver-main-windows
-          path: ${{ env.USERPROFILE }}\Desktop\xver-main.exe
+          path: ${{ env.USERPROFILE }}\xver-gui-build\dist\xver-main.exe
           if-no-files-found: error
