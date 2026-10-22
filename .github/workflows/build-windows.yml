@@ -17,9 +17,13 @@ jobs:
         shell: pwsh
         run: .\build-xver-gui.ps1
 
+      - name: Collect EXE
+        shell: pwsh
+        run: Copy-Item "$env:USERPROFILE\xver-gui-build\dist\xver-main.exe" "$env:GITHUB_WORKSPACE\xver-main.exe" -Force
+
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
           name: xver-main-windows
-          path: ${{ env.USERPROFILE }}\xver-gui-build\dist\xver-main.exe
+          path: xver-main.exe
           if-no-files-found: error
