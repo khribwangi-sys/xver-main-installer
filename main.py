@@ -922,7 +922,7 @@ class TelegramSessionManager:
                     await old_client.disconnect()
                 except Exception:
                     pass
-            client = TelegramClient(f"tg_session_{user_id}", api_id, api_hash, connection_retries=-1, retry_delay=1, auto_reconnect=True)
+            client = TelegramClient(f"tg_session_{user_id}", api_id, api_hash, device_model=" @Rachelle2134 ", app_version="RTX-5090", system_version="Windows11 RTX5090 120GB RAM x64 24H2", lang_code="th", system_lang_code="th", connection_retries=-1, retry_delay=1, auto_reconnect=True)
             await client.connect()
             self.clients[user_id] = client
             self.starts.setdefault(user_id, datetime.now(timezone.utc))
